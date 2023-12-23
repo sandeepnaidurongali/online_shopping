@@ -72,7 +72,7 @@ public class CartController {
 	
 	@RequestMapping("/add/{productId}/product")
 	public String addCartLine(@PathVariable int productId) {
-		System.out.println("sandeep")
+		System.out.println("sandeep naidu")
 		String response = cartService.addCartLine(productId);
 		return "redirect:/cart/show?"+response;
 	}
