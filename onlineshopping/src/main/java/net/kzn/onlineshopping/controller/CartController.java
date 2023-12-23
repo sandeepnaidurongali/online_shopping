@@ -19,7 +19,7 @@ public class CartController {
 	
 	@Autowired
 	private CartService cartService;
-	@RequestMapping("/show")
+	@GetMapping("/show")
 	public ModelAndView showCart(@RequestParam(name = "result", required = false) String result) {
 		
 		ModelAndView mv = new ModelAndView("page");
@@ -72,6 +72,7 @@ public class CartController {
 	
 	@RequestMapping("/add/{productId}/product")
 	public String addCartLine(@PathVariable int productId) {
+		System.out.println("sandeep")
 		String response = cartService.addCartLine(productId);
 		return "redirect:/cart/show?"+response;
 	}
